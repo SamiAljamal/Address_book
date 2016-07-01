@@ -12,6 +12,11 @@ namespace AddressBook
         return View ["index.cshtml"];
       };
 
+      Get["/contacts"] = _ => {
+        List<Contact> allContacts = Contact.GetAll();
+        return View["contacts_created.cshtml", allContacts];
+      };
+
     }
   }
 }

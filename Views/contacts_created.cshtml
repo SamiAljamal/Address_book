@@ -1,0 +1,8 @@
+<h1>Contacts</h1>
+<ul>
+  @foreach (var contact in Model)
+  {
+    <li> Name: @contact.GetName()<br> Email:  @contact.GetEmail() <br> Number:  @contact.GetNumber()</li>
+  }
+</ul>
+<a href="/contacts/new">Create New Contact</a>
