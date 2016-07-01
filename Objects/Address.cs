@@ -8,18 +8,16 @@ namespace AddressBook.Objects
   {
     private string _name;
     private string _email;
-    private int _number;
+    private string _number;
     private static List<Contact> _contactList = new List<Contact> {};
-    private int _id;
 
 
-    public Contact (string name, string email, int number)
+    public Contact (string name, string email, string number)
     {
       _name = name;
       _email = email;
       _number = number;
       _contactList.Add(this);
-      _id = _contactList.Count;
 
     }
 
@@ -43,13 +41,13 @@ namespace AddressBook.Objects
       _email = newEmail;
     }
 
-    public int GetNumber()
+    public string GetNumber()
     {
       return _number;
 
     }
 
-    public void SetNumber (int newNumber)
+    public void SetNumber (string newNumber)
     {
       _number = newNumber;
     }
@@ -59,24 +57,11 @@ namespace AddressBook.Objects
       return _contactList;
     }
 
-    public void Save()
-    {
-      _contactList.Add(this);
-    }
 
     public static void DeleteAll()
     {
       _contactList.Clear();
     }
 
-    public int GetId()
-    {
-      return _id;
-    }
-
-    public static Contact Find (int id)
-    {
-      return _contactList[id -1];
-    }
   }
 }
