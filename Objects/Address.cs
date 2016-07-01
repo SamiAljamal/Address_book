@@ -19,7 +19,7 @@ namespace AddressBook.Objects
       _email = email;
       _number = number;
       _contactList.Add(this);
-      _id = _carList.Count;
+      _id = _contactList.Count;
 
     }
 
@@ -54,7 +54,7 @@ namespace AddressBook.Objects
       _number = newNumber;
     }
 
-    public static List<Contact> Getall()
+    public static List<Contact> GetAll()
     {
       return _contactList;
     }
@@ -64,17 +64,17 @@ namespace AddressBook.Objects
       _contactList.Add(this);
     }
 
-    public static void ClearAll()
+    public static void DeleteAll()
     {
       _contactList.Clear();
     }
 
     public int GetId()
     {
-      return_id;
+      return _id;
     }
 
-    public static Car Find (int id)
+    public static Contact Find (int id)
     {
       return _contactList[id -1];
     }
